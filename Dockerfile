@@ -2,6 +2,7 @@ FROM alpine
 
 RUN apk update && apk upgrade
 RUN apk add gcc g++ python3-dev musl-dev make python3 py3-pip sudo
+RUN python3 -m pip config set global.break-system-packages true
 RUN pip3 install jupyterlab
 
 WORKDIR /root
