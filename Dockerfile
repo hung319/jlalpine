@@ -1,8 +1,6 @@
 FROM alpine
 
-# Set the PS1 environment variable
-ENV PS1='$ '
-
+RUN echo "export PS1='\$ '" >> /etc/profile
 RUN apk update && apk upgrade
 RUN apk add gcc g++ python3-dev musl-dev linux-headers make python3 py3-pip sudo
 RUN python3 -m pip config set global.break-system-packages true
